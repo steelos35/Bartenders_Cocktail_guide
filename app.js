@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
-  res.render('home/index');
+  res.render('index');
 });
 
 app.use('/cocktails', router);
