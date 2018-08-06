@@ -46,8 +46,8 @@ module.exports = {
 
   deleteCocktail(id) {
     return db.one(`
-    DELTE FROM cocktails
-    WHERE id = $1, id`, id);
+    DELETE FROM cocktails
+    WHERE id = $1`, id);
   },
 
 };
