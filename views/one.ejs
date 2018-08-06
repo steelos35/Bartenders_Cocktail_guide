@@ -1,0 +1,11 @@
+<%-include('./partials/boilerplate') %>
+<div class="cocktail_one">
+        <h1><%= cocktail.name %></h1>
+        <h3><%= cocktail.ingredient_id %></h3>
+        <h3><%= cocktail.glass %></h3>
+        <p><%= cocktail.comments %></p>
+        <button class="button"><a href="/cocktails/<%= cocktail.id %>/edit">Edit</a></button>
+        <form method="POST" action="/cocktails/<%=cocktail.id%>?_method=DELETE">
+            <button type="submit" class="button">Delete</button>
+      </form>
+    </div>

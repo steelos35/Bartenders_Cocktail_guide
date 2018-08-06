@@ -1,0 +1,12 @@
+<%-include('./partials/boilerplate') %>
+<h1>Your cocktails</h1>
+<div class="cocktail_container">
+<% cocktail.forEach(cocktails => { %>
+<div class="cocktail">
+    <br>
+    <%= cocktails.name %>
+    <br>
+    <a href="/cocktails/<%= cocktails.id%>">see more</a>
+</div>
+<% }) %>
+</div>

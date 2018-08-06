@@ -1,0 +1,16 @@
+<%-include('./partials/boilerplate') %>
+
+<div class="form-page">
+
+<form action="/cocktails/<%=cocktail.id%>?_method=PUT" method="POST">
+
+  <input type="text" name="name" value="<%=cocktail.name%>" /><br>
+  <input type="text" name="glass" value="<%=cocktail.glass%>" /><br>
+  <input type="text" name="comments" value="<%=cocktail.comments%>" /><br>
+  </select> <br>
+  <input type="submit" value="Submit changes" />
+</form>
+</div>
+<a href="/cocktails"> back to my cocktails </a>
+</div>
+

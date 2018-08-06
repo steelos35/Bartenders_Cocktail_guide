@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 // set views paths
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // required packages
 app.use(express.static(path.join(__dirname, 'public')));
@@ -32,5 +32,5 @@ app.use('/cocktails', router);
 
 // port is listening and server is up and running
 app.listen(PORT, () => {
-  console.log(`Cocktail Server up and listening on port ${PORT} in ${app.get('env')}`);
+  console.log(`Cocktail Server up and listening on port ${PORT} in ${app.get('env')}`);//eslint-disable-line
 });

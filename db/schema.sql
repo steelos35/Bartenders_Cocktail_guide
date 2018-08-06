@@ -6,8 +6,7 @@ DROP TABLE IF EXISTS ingredients;
 CREATE TABLE cocktails(
     id  SERIAL PRIMARY KEY NOT NULL,
     name  varchar(255) NOT NULL,
-    ingredient_id INT NOT NULL,
-    method varchar(255) NOT NULL,
+    ingredient_id INT ,
     glass varchar(255) NOT NULL,
     comments varchar(255)
 );
