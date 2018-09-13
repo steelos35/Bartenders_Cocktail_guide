@@ -28,9 +28,8 @@ module.exports = {
     return db.one(`
           INSERT INTO cocktails
           (name, ingredient_id, glass, comments)
-          VALUES ($/name/, $/ingredient_id/, $/comments/)
-          RETURNING *`,
-    cocktail);
+          VALUES ($/name/, $/ingredient_id/, $/glass, $/comments/)
+          RETURNING *`, cocktail);
   },
 
   //   update a cocktail

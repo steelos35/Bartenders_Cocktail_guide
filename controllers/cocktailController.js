@@ -29,9 +29,14 @@ module.exports = {
 
   // create a cocktail middleware
   createOne(req, res, next) {
-    db.createCocktail(req.body)
+    const {
+      name, ingredient_id, glass, comments,
+    } = req.body;
+    db.createCocktail({
+      name, ingredient_id, glass, comments,
+    })
       .then((cocktails) => {
-        res.locals.newCocktail = cocktails;
+        res.redirect('showAll');
         next();
       })
       .catch((err) => {
@@ -41,7 +46,6 @@ module.exports = {
 
   // edit a cocktail
   edit(req, res, next) {
-
     db.getOne(req.params.id)
       .then((cocktails) => {
         res.locals.cocktail = cocktails;
@@ -55,9 +59,13 @@ module.exports = {
   // update cocktail
   update(req, res, next) {
     req.body.id = req.params.id;
-   const {id, name, ingredient_id, glass, comments } = req.body;
-    db.updateCocktail({id, name, ingredient_id, glass, comments})  
-   .then(() => {
+    const {
+      id, name, ingredient_id, glass, comments,
+    } = req.body;
+    db.updateCocktail({
+      id, name, ingredient_id, glass, comments,
+    })
+      .then(() => {
         res.redirect(`cocktails/${cocktail.id}`);
       })
       .catch((err) => {

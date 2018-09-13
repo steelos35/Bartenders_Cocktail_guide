@@ -9,7 +9,7 @@ module.exports = {
   },
 
   sendCreateCocktail(req, res) {
-    res.redirect('create');
+    res.render('showAll');
   },
 
   editCocktail(req, res) {
